@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link href="img/icon.png" rel="icon">
+    <title>تسجيل الدخول - متجر بتلة</title>
+    <link rel="stylesheet" href="sign.css">
+    <style>
+        #loginMessage {
+            display: none;
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>تسجيل الدخول</h1>
+        <form onsubmit="showMessage(event)">
+            <div class="form-group">
+                <label for="email">:البريد الإلكتروني</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">:كلمة المرور</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">تسجيل الدخول</button>
+        </form>
+        <p id="loginMessage">تم تسجيل الدخول بنجاح!</p>
+    </div>
+
+    <script>
+        function showMessage(event) {
+            event.preventDefault(); // يمنع الانتقال لصفحة ثانية
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email && password) {
+                document.getElementById("loginMessage").style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+<footer>
+    <a href="o.html" class="back">العودة الى الصفحة الرئيسية</a>
+</footer>
+</html>
